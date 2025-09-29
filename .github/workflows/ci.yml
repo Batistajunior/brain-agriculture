@@ -46,6 +46,6 @@ jobs:
         env:
           SQLALCHEMY_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/brain_agriculture
           TESTING: "1"
-          PYTHONPATH: ${{ github.workspace }}/backend
+          PYTHONPATH: backend
         run: |
           pytest backend/app/tests -v --cov=backend/app --cov-report=term-missing
