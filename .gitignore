@@ -1,1 +1,14 @@
-node_modules
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# Node
+node_modules/
+
+# Outros
+.env
+*.sqlite3
+.DS_Store
