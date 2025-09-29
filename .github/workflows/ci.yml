@@ -29,7 +29,13 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  
+          fetch-depth: 0   # garante histórico do git
+          persist-credentials: false # evita conflito com tokens
+
+      - name: Configurar Git (evita erro 128)
+        run: |
+          git config --global user.email "ci@example.com"
+          git config --global user.name "CI Bot"
 
       - name: Configurar Python
         uses: actions/setup-python@v4
