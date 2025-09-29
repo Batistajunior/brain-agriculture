@@ -33,6 +33,10 @@ Desenvolvida como desafio técnico para **Engenharia de Dados / Software**.
 docker-compose down -v
 docker-compose up --build
 
+## FrontEnd 
+
+http://localhost:5173/
+
 
 
 ## Rodar testes no container
