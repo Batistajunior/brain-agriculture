@@ -29,7 +29,7 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0   
+          fetch-depth: 0
 
       - name: Configurar Python
         uses: actions/setup-python@v4
@@ -43,9 +43,10 @@ jobs:
           pip install pytest pytest-cov httpx
 
       - name: Rodar testes
+        working-directory: backend
         env:
           SQLALCHEMY_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/brain_agriculture
           TESTING: "1"
-          PYTHONPATH: backend
+          PYTHONPATH: .
         run: |
-          pytest backend/app/tests -v --cov=backend/app --cov-report=term-missing
+          pytest app/tests -v --cov=app --cov-report=term-missing
