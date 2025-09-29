@@ -29,7 +29,7 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 0   
 
       - name: Configurar Python
         uses: actions/setup-python@v4
@@ -47,6 +47,6 @@ jobs:
         env:
           SQLALCHEMY_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/brain_agriculture
           TESTING: "1"
-          PYTHONPATH: ${{ github.workspace }}/backend
+          PYTHONPATH: .
         run: |
           pytest app/tests -v --cov=app --cov-report=term-missing
