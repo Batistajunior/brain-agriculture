@@ -54,4 +54,4 @@ jobs:
           SQLALCHEMY_DATABASE_URL: "sqlite:///:memory:"
           TESTING: "1"
         run: |
-          pytest backend/app/tests -v --cov=app --cov-report=term-missing
+          python -m pytest app/tests -v --cov=app --cov-report=term-missing
