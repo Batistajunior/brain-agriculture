@@ -41,13 +41,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt
           pip install pytest pytest-cov httpx
+          pip install -e backend   # registra "app" como pacote
 
       - name: Rodar testes
-        working-directory: backend
         env:
-          SQLALCHEMY_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/brain_agriculture
+          SQLALCHEMY_DATABASE_URL: "sqlite:///:memory:"
           TESTING: "1"
-          PYTHONPATH: ${{ github.workspace }}/backend
         run: |
-          cd backend
-          pytest -m pytest app/tests -v --cov=app --cov-report=term-missing
+          pytest backend/app/tests -v --cov=app --cov-report=term-missing
