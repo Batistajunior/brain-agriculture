@@ -1,0 +1,32 @@
+/* frontend/src/index.css */
+:root {
+  --bg-color: #f8fafc;
+  --text-color: #333;
+
+  --btn-bg: #2c7a7b;
+  --btn-hover-bg: #285e61;
+  --btn-text: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--btn-hover-bg);
+}
